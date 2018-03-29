@@ -1,0 +1,22 @@
+{
+  "name": "minimalist",
+  "version": "1.0.0",
+  "description": "A starter framework for building web applications",
+  "scripts": {
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rabyyuson/minimalist.git"
+  },
+  "author": "Raby Yuson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rabyyuson/minimalist/issues"
+  },
+  "homepage": "https://github.com/rabyyuson/minimalist#readme",
+  "dependencies": {
+    "debug": "^3.1.0",
+    "express": "^4.16.3"
+  }
+}
