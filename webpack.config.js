@@ -1,25 +1,17 @@
-const path = require("path");
-const webpack = require("webpack");
+var webpack = require('webpack')
+var path = require('path')
 
 module.exports = {
-  devtool: "inline-source-map",
-  devServer: {
-    contentBase: path.join(__dirname, "public/"),
-    port: 3000,
-    publicPath: "http://localhost:3000/dist/",
-    hotOnly: true
-  },
   entry: ["babel-polyfill", "./src/index.js"],
   mode: "development",
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         loader: "babel-loader",
         options: {
-          presets: ["env", "react"],
-          plugins: ["transform-class-properties"]
+          presets: ["react", "es2015"]
         }
       },
       {
@@ -45,4 +37,4 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   resolve: { extensions: ["*", ".js", ".jsx"] }
-};
+}

@@ -7,17 +7,19 @@ Starting web application made easy with this tiny starter framework.
 ```
 git clone https://github.com/rabyyuson/minimalist.git
 cd minimalist
-npm install
+yarn install
 ```
 
 ### Running
 
-```
-DEBUG=app npm start
-```
-
-then navigate to:
+To run it on dev with HMR:
 
 ```
-http://localhost:9000/
+yarn start-dev
+```
+
+To run it on normally (build for production):
+
+```
+yarn start
 ```
