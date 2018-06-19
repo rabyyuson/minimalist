@@ -1,19 +1,33 @@
-'use strict'
+import React from 'react'
+import ReactDOMServer from 'react-dom/server'
+import { StaticRouter } from 'react-router'
+import routes from '../src/routes'
+import App from '../src/components/App';
 
-const debug = require('debug')('app')
-const express = require('express')
-const path = require('path')
-const http = require('http')
+function server(req, res, next) {
+  const context = {}
 
-const app = express()
-const port = process.env.PORT || 3000
+  const html = ReactDOMServer.renderToString(
+    <StaticRouter
+      location={req.url}
+      context={context}
+    >
+      <App/>
+    </StaticRouter>
+  )
 
-app.use("/dist", express.static(path.join(__dirname, "../dist")))
-app.use(express.static(path.join(__dirname, '../public')))
+  if (context.url) {
+    res.writeHead(301, {
+      Location: context.url
+    })
+    res.end()
+  } else {
+    res.write(`
+      <!doctype html>
+      <div id="app">${html}</div>
+    `)
+    res.end()
+  }
+}
 
-app.get('/', function (request, response){
-  response.sendFile(path.resolve(__dirname, 'public', 'index.html'))
-})
-
-app.listen(port)
-debug(`Express server listening on port ${port}`)
+module.exports = server

@@ -5,8 +5,9 @@
   "scripts": {
     "start": "npm-run-all --parallel webpack:build server",
     "start-dev": "webpack-dev-server --config ./webpack.dev.config.js --open",
+    "start-production": "./start",
     "webpack:build": "webpack -w",
-    "server": "node ./server/server.js"
+    "server": "babel-node ./app.js"
   },
   "repository": {
     "type": "git",
@@ -34,8 +35,7 @@
     "react-hot-loader": "^4.3.3",
     "react-router-dom": "^4.3.1",
     "style-loader": "^0.21.0",
-    "webpack": "^4.12.0",
-    "yarn-run-all": "^3.1.1"
+    "webpack": "^4.12.0"
   },
   "devDependencies": {
     "webpack-cli": "^3.0.8",

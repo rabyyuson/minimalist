@@ -1,12 +1,13 @@
 const path = require("path");
 const webpack = require("webpack");
+const config = require('./config')
 
 module.exports = {
   devtool: "inline-source-map",
   devServer: {
     contentBase: path.join(__dirname, "public/"),
-    port: 3000,
-    publicPath: "http://localhost:3000/dist/",
+    port: config.port,
+    publicPath: "http://localhost:8080/dist/",
     hotOnly: true
   },
   entry: ["babel-polyfill", "./src/index.js"],
