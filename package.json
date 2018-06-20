@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "A starter framework for building web applications",
   "scripts": {
-    "start": "npm-run-all --parallel webpack:build server",
-    "start-dev": "webpack-dev-server --config ./webpack.dev.config.js --open",
-    "start-production": "./start",
-    "webpack:build": "webpack -w",
-    "server": "babel-node ./app.js"
+    "build:webpack": "webpack",
+    "start": "npm run build:webpack && babel-node ./app.js",
+    "start-dev": "webpack-dev-server --config ./webpack.config.js --open"
   },
   "repository": {
     "type": "git",

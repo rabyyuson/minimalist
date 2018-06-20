@@ -1,5 +1,0 @@
-#! /bin/bash
-
-node_modules/.bin/webpack -w --config ./webpack.config.js
-
-node app.js

@@ -1,8 +1,19 @@
-var webpack = require('webpack')
-var path = require('path')
+const webpack = require('webpack')
+const path = require('path')
+const config = require('./config.json')
 
-module.exports = {
-  entry: ["babel-polyfill", "./src/index.js"],
+const webpackConfig = {
+  entry: [
+    "babel-polyfill",
+    "./src/index.js"
+  ],
+  devtool: "inline-source-map",
+  devServer: {
+    contentBase: path.join(__dirname, "public/"),
+    port: config.port,
+    publicPath: `http://localhost:${config.port}/dist/`,
+    hotOnly: true
+  },
   mode: "development",
   module: {
     rules: [
@@ -38,3 +49,5 @@ module.exports = {
   ],
   resolve: { extensions: ["*", ".js", ".jsx"] }
 }
+
+module.exports = webpackConfig
