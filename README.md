@@ -23,3 +23,5 @@ To run it on normally (build for production):
 ```
 yarn start
 ```
+
+*TO DO: Use Graphql and Relay Modern*
