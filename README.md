@@ -26,6 +26,6 @@ yarn start
 
 #### To Do's:
 
-..* Graphql support
-..* Relay Modern support
-..* Maybe switch React-Router?
+1. Graphql support
+2. Relay Modern support
+3. Maybe switch React-Router?
