@@ -1,6 +1,6 @@
 # Minimalist
 
-Starting web application made easy with this tiny starter framework.
+A tiny boilerplate for start your awesome modern Single Page Application (SPA)!
 
 ### Installing
 
@@ -24,4 +24,8 @@ To run it on normally (build for production):
 yarn start
 ```
 
-*TO DO: Use Graphql and Relay Modern*
+#### To Do's:
+
+..* Graphql support
+..* Relay Modern support
+..* Maybe switch React-Router?
