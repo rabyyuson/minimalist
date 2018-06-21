@@ -26,9 +26,9 @@ yarn start
 
 #### To Add:
 
-~~ * Graphql~~
-* Relay
-* SCSS
-* Add more pages and styles
-* Fix webpack
-* Fix server/server.js
+~~1. Graphql~~
+2. Relay
+3. SCSS
+4. Add more pages and styles
+5. Fix webpack
+6. Fix server/server.js
