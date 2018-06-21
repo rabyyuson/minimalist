@@ -26,7 +26,7 @@ yarn start
 
 #### To Add:
 
-~~* Graphql~~
+~~ * Graphql~~
 * Relay
 * SCSS
 * Add more pages and styles
