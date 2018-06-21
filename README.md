@@ -1,6 +1,6 @@
 # Minimalist
 
-A tiny boilerplate for start your awesome modern Single Page Application (SPA)!
+A tiny boilerplate for starting modern SPAs.
 
 ### Installing
 
@@ -12,20 +12,23 @@ yarn install
 
 ### Running
 
-To run it on dev with HMR:
+To run it on development mode with HMR:
 
 ```
 yarn start-dev
 ```
 
-To run it on normally (build for production):
+To run it on normally:
 
 ```
 yarn start
 ```
 
-#### To Do's:
+#### To Add:
 
-1. Graphql support
-2. Relay Modern support
-3. Maybe switch React-Router?
+~~⋅⋅* Graphql~~
+⋅⋅* Relay
+⋅⋅* SCSS
+⋅⋅* Add more pages and styles
+⋅⋅* Fix webpack
+⋅⋅* Fix server/server.js
