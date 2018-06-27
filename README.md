@@ -23,12 +23,3 @@ To run it on normally:
 ```
 yarn start
 ```
-
-#### To Add:
-
-* Graphql...**DONE**
-* Relay
-* SCSS
-* Add more pages and styles
-* Fix webpack
-* Fix server/server.js

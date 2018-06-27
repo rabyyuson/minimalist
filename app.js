@@ -1,3 +1,5 @@
+'use strict'
+
 import app from './server/app'
 import config from './config.json'
 

@@ -1,12 +1,18 @@
-import React from 'react'
-import Header from './Header'
-import Main from './Main'
+'use strict'
 
-const App = () => (
-  <div>
-    <Header />
-    <Main />
-  </div>
-)
+import React, { Component } from 'react'
+import Header from './Header'
+import Routes from './Routes'
+import AppContainer from './AppContainer'
+
+class App extends Component {
+  render() {
+    return (
+      <AppContainer>
+        <Routes />
+      </AppContainer>
+    )
+  }
+}
 
 export default App

@@ -1,12 +1,13 @@
+'use strict'
+
 import React from 'react'
 import { Link } from 'react-router'
+import Header from './Header'
 
-const AppContainer = props => {
+const AppContainer = (props) => {
   return (
     <div>
-      <Link to='/'>Home</Link>
-      { ' | ' }
-      <Link to='/about'>About</Link>
+      <Header />
       {props.children}
     </div>
   )

@@ -1,3 +1,5 @@
+'use strict'
+
 const { buildSchema } = require('graphql')
 
 const sampleSchema = `
