@@ -15,11 +15,11 @@ yarn install
 To run it on development mode with HMR:
 
 ```
-yarn start-dev
-```
-
-To run it on normally:
-
-```
 yarn start
+```
+
+For production build:
+
+```
+yarn build
 ```

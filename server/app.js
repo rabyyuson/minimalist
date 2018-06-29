@@ -13,8 +13,12 @@ app.use(express.static(path.join(__dirname, '../public')))
 
 app.use(server)
 
-app.get('/', function (request, response){
+app.get('/', function(request, response) {
   response.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+})
+
+app.get('/about', function(request, response) {
+  response.sendFile(path.resolve(__dirname, '../public', 'index.html'))
 })
 
 app.use('/graphql', express_graphql(graphqlConfig))
