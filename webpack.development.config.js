@@ -23,7 +23,9 @@ const webpackConfig = {
         use: [
           {
             loader: 'babel-loader',
-            options: { presets: [ 'env', 'react' ] }
+            options: {
+              presets: [ 'env', 'react' ]
+            }
           }
         ]
       },
@@ -40,7 +42,9 @@ const webpackConfig = {
         use: [
           {
             loader: 'url-loader',
-            options: { limit: 10000 }
+            options: {
+              limit: 10000
+            }
           }
         ]
       }

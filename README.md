@@ -12,13 +12,13 @@ yarn install
 
 ### Running
 
-To run it on development mode with HMR:
+Development mode:
 
 ```
 yarn start
 ```
 
-For production build:
+Production build:
 
 ```
 yarn build
