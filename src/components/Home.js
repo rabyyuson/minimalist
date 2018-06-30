@@ -2,10 +2,12 @@
 
 import React, { Component } from 'react'
 
+import './Home.scss'
+
 class Home extends Component {
   render() {
     return (
-      <div>
+      <div className="Home">
         <h1>Home page</h1>
       </div>
     )

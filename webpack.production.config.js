@@ -20,26 +20,27 @@ const webpackConfig = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.js$/,
         exclude: /(node_modules)/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         options: {
           presets: [
-            "react",
-            "es2015"
+            'env',
+            'react'
           ]
         }
       },
       {
-        test: /\.css$/,
-        use: [
-          "style-loader",
-          "css-loader"
+        test: /\.scss$/,
+        loaders: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
         ]
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg|pdf)$/,
-        loader: "url-loader",
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        loader: 'url-loader',
         options: {
           limit: 10000
         }
@@ -48,9 +49,8 @@ const webpackConfig = {
   },
   resolve: {
     extensions: [
-      "*",
-      ".js",
-      ".jsx"
+      '.js',
+      '.scss'
     ]
   },
 }

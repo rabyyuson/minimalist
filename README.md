@@ -1,6 +1,6 @@
 # Minimalist
 
-A tiny boilerplate for starting modern SPAs.
+Quickly build a fast and modern SPA's with cutting-edge technology! ❤
 
 ### Installing
 
