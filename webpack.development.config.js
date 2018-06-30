@@ -8,9 +8,7 @@ const config = require('./config.json')
 const webpackConfig = {
   mode: 'development',
   entry: {
-    app: [
-      './src/index.js'
-    ]
+    app: [ './src/index.js' ]
   },
   output: {
     path: path.join(__dirname, 'public', 'assets'),
@@ -22,36 +20,34 @@ const webpackConfig = {
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
-        loader: 'babel-loader',
-        options: {
-          presets: [
-            'env',
-            'react'
-          ]
-        }
+        use: [
+          {
+            loader: 'babel-loader',
+            options: { presets: [ 'env', 'react' ] }
+          }
+        ]
       },
       {
         test: /\.scss$/,
-        loaders: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+          { loader: 'sass-loader' }
         ]
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000
-        }
+        use: [
+          {
+            loader: 'url-loader',
+            options: { limit: 10000 }
+          }
+        ]
       }
     ]
   },
   resolve: {
-    extensions: [
-      '.js',
-      '.scss'
-    ]
+    extensions: [ '.js', '.scss' ]
   },
   devServer: {
     contentBase: path.join(__dirname, 'public'),

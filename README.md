@@ -1,6 +1,6 @@
 # Minimalist
 
-Quickly build a fast and modern SPA's with cutting-edge technology! ❤
+Cutting-edge boilerplate for building fast and modern SPA's! ❤
 
 ### Installing
 
