@@ -1,9 +1,16 @@
 'use strict'
 
-// TO DO: process requests
+import React from 'react'
+import { renderToString } from 'react-dom/server'
 
-function server(req, res, next) {
-  next()
+import App from '../src/components/App'
+
+function server(request, response, next) {
+  const html = renderToString(App)
+
+  response.render('index', {
+    html
+  })
 }
 
-module.exports = server
+export default server

@@ -1,6 +1,6 @@
 'use strict'
 
-const { buildSchema } = require('graphql')
+import { buildSchema } from 'graphql'
 
 const sampleSchema = `
   type Query {
@@ -19,4 +19,4 @@ const config = {
   graphiql: true
 }
 
-module.exports = config
+export default config
