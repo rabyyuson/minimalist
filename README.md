@@ -1,6 +1,6 @@
 # Minimalist
 
-Cutting-edge boilerplate for building fast and modern SPA's! ❤
+Bare essential boilerplate for building fast and modern SPA's! ❤
 
 ### Installing
 
