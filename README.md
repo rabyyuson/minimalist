@@ -1,6 +1,7 @@
 # Minimalist
 
 Tiny boilerplate for building fast and modern SPA's! ❤
+
 **NOTE: Project is still actively being developed!**
 
 ### Installing
