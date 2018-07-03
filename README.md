@@ -1,6 +1,6 @@
 # Minimalist
 
-Bare essential boilerplate for building fast and modern SPA's! ❤
+Tiny boilerplate for building fast and modern SPA's! ❤
 
 ### Installing
 
@@ -22,4 +22,10 @@ Production build:
 
 ```
 yarn build
+```
+
+GraphQL endpoint:
+
+```
+http://localhost:8080/graphql
 ```

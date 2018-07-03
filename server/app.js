@@ -25,9 +25,6 @@ app.use(webpackHotMiddleware(compiler))
 // Serve static files from the "public" folder
 app.use(express.static('public'))
 
-// Mount the server middleware on every request to the app
-app.use(server)
-
 // Set the directory for the application views
 app.set('views', path.resolve(__dirname, 'views'))
 
@@ -37,14 +34,10 @@ app.set('view engine', 'jsx')
 // Register the template engine callback
 app.engine('jsx', expressReactViews.createEngine())
 
-// Handle all requests using our index.jsx server view
-app.get('*', function(request, response) {
-  response.render('index', {
-    title: 'Minimalist'
-  })
-})
-
 // Create a GraphQL server
 app.use('/graphql', expressGraphQl(graphqlConfig))
+
+// Mount the server middleware on every request to the app
+app.use(server)
 
 export default app

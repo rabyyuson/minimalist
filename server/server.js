@@ -7,9 +7,11 @@ import App from '../src/components/App'
 
 function server(request, response, next) {
   const html = renderToString(App)
+  const title = "Minimalist"
 
   response.render('index', {
-    html
+    html,
+    title
   })
 }
 
