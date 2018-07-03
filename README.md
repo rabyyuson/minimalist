@@ -1,6 +1,7 @@
 # Minimalist
 
 Tiny boilerplate for building fast and modern SPA's! ❤
+**NOTE: Project is still actively being developed!**
 
 ### Installing
 
@@ -12,7 +13,7 @@ yarn install
 
 ### Running
 
-Development mode:
+Development mode with [HMR](https://webpack.js.org/concepts/hot-module-replacement/):
 
 ```
 yarn start
@@ -24,7 +25,7 @@ Production build:
 yarn build
 ```
 
-GraphQL endpoint:
+GraphQL endpoint is located at:
 
 ```
 http://localhost:8080/graphql
