@@ -4,7 +4,7 @@
   "description": "A starter framework for building web applications",
   "scripts": {
     "build": "node node_modules/webpack/bin/webpack --config ./webpack.production.config.js && babel-node ./app.js",
-    "start": "webpack-dev-server --config ./webpack.development.config.js"
+    "start": "node node_modules/webpack/bin/webpack --config ./webpack.development.config.js && babel-node ./app.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,6 @@
     "graphql": "^0.13.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-hot-loader": "^4.3.3",
     "react-router-dom": "^4.3.1",
     "sass-loader": "^7.0.3",
     "webpack": "^4.12.0"
@@ -38,9 +37,11 @@
     "css-loader": "^0.28.11",
     "node-sass": "^4.9.0",
     "postcss-loader": "^2.1.5",
+    "react-hot-loader": "^4.3.3",
     "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",
     "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-dev-middleware": "^3.1.3",
+    "webpack-hot-middleware": "^2.22.2"
   }
 }

@@ -8,12 +8,15 @@ const config = require('./config.json')
 const webpackConfig = {
   mode: 'development',
   entry: {
-    app: [ './src/index.js' ]
+    app: [
+      './src/index.js',
+      'webpack-hot-middleware/client'
+    ]
   },
   output: {
     path: path.join(__dirname, 'public', 'assets'),
     filename: 'bundle.js',
-    publicPath: '/assets/'
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -52,17 +55,6 @@ const webpackConfig = {
   },
   resolve: {
     extensions: [ '.js', '.scss' ]
-  },
-  devServer: {
-    contentBase: path.join(__dirname, 'public'),
-    filename: 'bundle.js',
-    hot: true,
-    index: './public/index.html',
-    inline: true,
-    overlay: true,
-    port: config.port,
-    progress: true,
-    publicPath: '/assets/'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()

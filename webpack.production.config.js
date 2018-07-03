@@ -52,7 +52,7 @@ const webpackConfig = {
   },
   resolve: {
     extensions: [ '.js', '.scss' ]
-  },
+  }
 }
 
 module.exports = webpackConfig

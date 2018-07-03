@@ -1,6 +1,7 @@
 'use strict'
 
 import React, { Component } from 'react'
+import { hot } from 'react-hot-loader'
 
 import AppContainer from './AppContainer'
 import Header from './Header'
@@ -16,4 +17,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default hot(module)(App)
