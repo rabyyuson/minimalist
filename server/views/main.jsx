@@ -13,8 +13,7 @@ class Index extends Component {
         <title>{ this.props.title }</title>
       </head>
       <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root">{ this.props.children }</div>
+        <div id="root" dangerouslySetInnerHTML={ { __html: this.props.html } }></div>
         <script src={`./assets/app${ this.props.hash }.js`}></script>
       </body>
       </html>
