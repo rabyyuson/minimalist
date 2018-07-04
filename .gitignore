@@ -4,6 +4,7 @@ hash.json
 build.json
 npm-debug.log
 yarn-error.log
+yarn.lock
 
 # dependencies
 node_modules
