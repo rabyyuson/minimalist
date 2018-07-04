@@ -1,0 +1,20 @@
+#! /bin/bash
+
+# Remove unnecessary files
+rm -rf hash.json build.json public/assets
+
+# Create a new public/assets directory
+mkdir public/assets
+
+# Build webpack bundle
+if [ $NODE_ENV == "production" ]; then
+    node node_modules/webpack/bin/webpack --config ./webpack.production.config.js --json > build.json
+elif [ $NODE_ENV == "development"  ]; then
+    node node_modules/webpack/bin/webpack --config ./webpack.development.config.js --json > build.json
+fi
+
+# Build the hash.json file
+node utilities/scripts/buildHash
+
+# Run the app on babel
+babel-node ./app.js

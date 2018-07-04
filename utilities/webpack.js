@@ -1,7 +1,7 @@
 'use strict'
 
-import webpackDevelopmentConfig from '../../webpack.development.config'
-import webpackProductionConfig from '../../webpack.production.config'
+import webpackDevelopmentConfig from '../webpack.development.config'
+import webpackProductionConfig from '../webpack.production.config'
 
 const config = {
   'development': webpackDevelopmentConfig,
