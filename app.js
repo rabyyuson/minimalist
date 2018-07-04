@@ -1,7 +1,7 @@
 'use strict'
 
 import app from './server/app'
-import config from './config.json'
+import config from './config/config.json'
 
 const debug = require('debug')('app')
 

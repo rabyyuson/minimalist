@@ -1,8 +1,8 @@
 'use strict'
 
 import webpack from 'webpack'
-import webpackConfig from '../utilities/webpack'
+import webpackDevelopmentConfig from '../config/webpack.development.config'
 
-const compiler = webpack(webpackConfig)
+const compiler = webpack(webpackDevelopmentConfig)
 
 export default compiler

@@ -1,10 +1,12 @@
 .DS_Store
 .idea
-hash.json
-build.json
 npm-debug.log
 yarn-error.log
 yarn.lock
+
+# config
+config/hash.json
+config/build.json
 
 # dependencies
 node_modules

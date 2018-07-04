@@ -4,7 +4,7 @@ const path = require('path')
 
 const webpackDefaultConfig = {
   output: {
-    path: path.join(__dirname, 'public', 'assets'),
+    path: path.join(__dirname, '../public', 'assets'),
     filename: '[name][hash].js',
     publicPath: '/'
   },
