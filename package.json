@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A starter framework for building web applications",
   "scripts": {
-    "build": "node node_modules/webpack/bin/webpack --config ./webpack.production.config.js && babel-node ./app.js",
-    "start": "node node_modules/webpack/bin/webpack --config ./webpack.development.config.js && babel-node ./app.js"
+    "build": "node node_modules/webpack/bin/webpack --config ./webpack.production.config.js --json > build.json && NODE_ENV=production babel-node ./app.js",
+    "start": "node node_modules/webpack/bin/webpack --config ./webpack.development.config.js --json > build.json && NODE_ENV=development babel-node ./app.js"
   },
   "repository": {
     "type": "git",

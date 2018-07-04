@@ -15,7 +15,7 @@ class Index extends Component {
       <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
         <div id="root">{ this.props.children }</div>
-        <script src={`./assets/bundle.js`}></script>
+        <script src={`./assets/app${ this.props.hash }.js`}></script>
       </body>
       </html>
     )

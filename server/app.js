@@ -4,19 +4,16 @@ import express from 'express'
 import expressGraphQl from 'express-graphql'
 import expressReactViews from 'express-react-views'
 import path from 'path'
-import webpack from 'webpack'
-import webpackDevConfig from '../webpack.development.config'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 
+import compiler from './compiler'
 import server from './server'
 import graphqlConfig from './graphql/config'
 
-const NODE_ENV = process.env.NODE_ENV || 'development'
 const app = express()
-const compiler = webpack(webpackDevConfig)
 
-// Wrapper that emit files processed by webpack
+// Emit files processed by webpack
 app.use(webpackDevMiddleware(compiler))
 
 // Webpack hot reloading using webpack-dev-middleware
