@@ -1,26 +1,41 @@
 'use strict'
 
-import React from 'react'
-import { renderToString } from 'react-dom/server'
-import { StaticRouter } from 'react-router'
+import express from 'express'
+import expressReactViews from 'express-react-views'
+import graphqlHTTP from 'express-graphql'
+import path from 'path'
+import webpackDevMiddleware from 'webpack-dev-middleware'
+import webpackHotMiddleware from 'webpack-hot-middleware'
 
-import hash from '../config/hash.json'
-import App from '../src/components/App'
+import compiler from './compiler'
+import reactRouterMiddleware from './react-router-middleware'
+import graphqlConfig from '../config/graphql/config'
 
-function server(request, response, next) {
-  const context = {}
-  const html = renderToString(
-    <StaticRouter location={request.url} context={context}>
-      <App/>
-    </StaticRouter>
-  )
-  const title = "Minimalist"
+// Create an express app
+const app = express()
 
-  response.render('main', {
-    hash,
-    html,
-    title
-  })
-}
+// Emit files processed by webpack
+app.use(webpackDevMiddleware(compiler))
 
-export default server
+// Webpack hot reloading using webpack-dev-middleware
+app.use(webpackHotMiddleware(compiler))
+
+// Serve static files from the "public" folder
+app.use(express.static('public'))
+
+// Set the directory for the application views
+app.set('views', path.resolve(__dirname, 'views'))
+
+// Use the Express React Views template engine
+app.set('view engine', 'jsx')
+
+// Register the template engine callback
+app.engine('jsx', expressReactViews.createEngine())
+
+// Create a GraphQL HTTP server
+app.use('/graphql', graphqlHTTP(graphqlConfig))
+
+// Handle requests to the app through the react-router-middleware
+app.use(reactRouterMiddleware)
+
+export default app

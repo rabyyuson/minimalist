@@ -1,0 +1,9 @@
+#! /bin/bash
+
+# Create a schema.grapqhl if we don't have one
+if [ ! -e config/graphql/schema.graphql ]; then
+  babel-node ./scripts/update-schema.js
+fi
+
+# Run the relay compiler using the schema.graphql
+# relay-compiler --src ./src --schema config/graphql/schema.graphql

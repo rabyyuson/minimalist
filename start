@@ -8,13 +8,13 @@ mkdir public/assets
 
 # Build webpack bundle
 if [ $NODE_ENV == "production" ]; then
-    node node_modules/webpack/bin/webpack --config ./config/webpack.production.config.js --json > config/build.json
-elif [ $NODE_ENV == "development"  ]; then
-    node node_modules/webpack/bin/webpack --config ./config/webpack.development.config.js --json > config/build.json
+  node node_modules/webpack/bin/webpack --config ./config/webpack.production.config.js --json > config/build.json
+else
+  node node_modules/webpack/bin/webpack --config ./config/webpack.development.config.js --json > config/build.json
 fi
 
 # Build the hash.json file
-node scripts/buildHash
+node scripts/build-hash
 
 # Run the app on babel for ES6 support
 babel-node ./app.js
