@@ -1,13 +1,16 @@
 'use strict'
 
+// TODO replace with actual schema
 import { buildSchema } from 'graphql'
-
-import graphqlSchema from './schema.graphql'
 
 const { NODE_ENV } = process.env
 
 // Construct schema using GraphQL language
-const schema = buildSchema(graphqlSchema)
+const schema = buildSchema(`
+  type Query {
+    message: String
+  }
+`)
 
 // The resolver function for each API endpoint
 const rootValue = {

@@ -6,4 +6,4 @@ if [ ! -e config/graphql/schema.graphql ]; then
 fi
 
 # Run the relay compiler using the schema.graphql
-# relay-compiler --src ./src --schema config/graphql/schema.graphql
+relay-compiler --src ./src --schema config/graphql/schema.graphql
