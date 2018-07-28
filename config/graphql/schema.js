@@ -9,7 +9,7 @@ import {
   GraphQLObjectType,
   GraphQLSchema,
   GraphQLString,
-} from 'graphql'
+} from 'graphql';
 
 import {
   connectionArgs,
@@ -21,7 +21,7 @@ import {
   mutationWithClientMutationId,
   nodeDefinitions,
   toGlobalId,
-} from 'graphql-relay'
+} from 'graphql-relay';
 
 import {
   Todo,
@@ -36,7 +36,7 @@ import {
   removeCompletedTodos,
   removeTodo,
   renameTodo,
-} from './database'
+} from './database';
 
 const {nodeInterface, nodeField} = nodeDefinitions(
   (globalId) => {

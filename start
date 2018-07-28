@@ -1,5 +1,21 @@
 #! /bin/bash
 
+### Relay ###
+
+# Create a schema.grapqhl if we don't have one
+# if [ ! -e config/graphql/schema.graphql ]; then
+#  babel-node ./scripts/update-schema.js
+# fi
+
+# Update schema every compile.. Remove for prod and do above conditional logic!
+babel-node ./scripts/update-schema.js
+
+# Run the relay compiler using the schema.graphql
+relay-compiler --src ./src --schema config/graphql/schema.graphql
+
+
+### Build ###
+
 # Remove unnecessary files
 rm -rf hash.json build.json public/assets
 
