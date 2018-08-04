@@ -25,9 +25,13 @@ function fetchQuery(
   });
 }
 
+const source = new RecordSource()
+const store = new Store(source)
+const network = Network.create(fetchQuery)
+
 const environment = new Environment({
-  network: Network.create(fetchQuery),
-  store: new Store(new RecordSource()),
+  network,
+  store
 });
 
 export default environment;

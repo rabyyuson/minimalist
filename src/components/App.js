@@ -8,6 +8,7 @@ import environment from '../../config/relay/environment'
 
 import Header from './Header'
 import Routes from './Routes'
+import TodoApp from './Todo/TodoApp'
 
 class App extends Component {
   render() {
@@ -17,31 +18,26 @@ class App extends Component {
         query={graphql`
           query AppQuery {
             viewer {
-              id
+              ...TodoApp_viewer
             }
           }
         `}
         variables={{}}
         render={({error, props}) => {
           if (props) {
-            return this.renderApp(props)
+            return (
+              <div>
+                <Header />
+                <hr />
+                <Routes />
+                <TodoApp viewer={props.viewer} />
+              </div>
+            )
           } else {
             return <div>Loading...</div>;
           }
         }}
       ></QueryRenderer>
-    )
-  }
-
-  renderApp(props) {
-    return (
-      <div>
-        <Header />
-        <br/>
-        User ID: {props.viewer.id}
-        <hr />
-        <Routes />
-      </div>
     )
   }
 }

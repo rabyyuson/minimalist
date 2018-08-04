@@ -14,6 +14,7 @@ const options = {
 if (NODE_ENV === 'development') {
   // Expose the graphql in-browser IDE
   options.graphiql = true
+
   // Pretty-print the JSON response
   options.pretty = true
 }
