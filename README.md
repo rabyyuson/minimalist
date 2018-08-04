@@ -2,9 +2,11 @@
 
 Tiny boilerplate for building fast and modern SPA's!
 
-**NOTE: Project is still actively being developed!**
+### Dependency
 
-### Installing
+1. Yarn - https://yarnpkg.com/en/docs/install
+
+### Installation
 
 ```
 git clone https://github.com/rabyyuson/minimalist.git
@@ -30,7 +32,7 @@ and then navigate to http://localhost:8080/ and you should see your new shiny ap
 
 ### Other features
 
-The app uses [GraphQL](https://graphql.org/)! The endpoint is located at:
+The app uses [GraphQL](https://graphql.org/) and can be accessed at:
 
 ```
 http://localhost:8080/graphql
