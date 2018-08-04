@@ -35,10 +35,3 @@ The app uses [GraphQL](https://graphql.org/)! The endpoint is located at:
 ```
 http://localhost:8080/graphql
 ```
-
-### Future additions
-
-1. Relay Modern
-2. Database Connection
-3. Responsive Design
-4. and a whole lot more..!
