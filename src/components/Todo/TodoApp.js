@@ -12,16 +12,20 @@ import {
 } from 'react-relay';
 
 class TodoApp extends React.Component {
-  _handleTextInputSave(text) {
+  _handleTextInputSave(props) {
+    const { relay, text, viewer } = props
+
     AddTodoMutation.commit(
-      this.props.relay.environment,
+      relay.environment,
       text,
-      this.props.viewer
+      viewer
     );
   };
 
   render() {
-    const hasTodos = this.props.viewer.totalCount > 0;
+    const { relay, viewer } = this.props
+    const hasTodos = viewer.totalCount > 0
+
     return (
       <div>
         <section className="todoapp">
@@ -29,15 +33,15 @@ class TodoApp extends React.Component {
             <TodoTextInput
               autoFocus={true}
               className="new-todo"
-              onSave={this._handleTextInputSave}
+              onSave={(text) => this._handleTextInputSave({ relay, text, viewer })}
               placeholder="What needs to be done?"
             />
           </header>
-          <TodoList viewer={this.props.viewer} />
+          <TodoList viewer={viewer} />
           {hasTodos &&
             <TodoListFooter
-              todos={this.props.viewer.todos}
-              viewer={this.props.viewer}
+              todos={viewer.todos}
+              viewer={viewer}
             />
           }
         </section>

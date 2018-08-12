@@ -29,8 +29,7 @@ class App extends Component {
               <div>
                 <Header />
                 <hr />
-                <Routes />
-                <TodoApp viewer={props.viewer} />
+                <Routes viewer={props.viewer} />
               </div>
             )
           } else {

@@ -5,13 +5,15 @@ import { Route } from 'react-router-dom'
 
 import About from './About'
 import Home from './Home'
+import TodoApp from './Todo/TodoApp'
 
 class Routes extends Component {
   render() {
     return (
       <div>
-        <Route exact path='/' component={Home}/>
-        <Route path='/about' component={About}/>
+        <Route exact path='/' component={Home} />
+        <Route path='/about' component={About} />
+        <Route path='/todo' render={() => <TodoApp viewer={this.props.viewer} />} />
       </div>
     )
   }
